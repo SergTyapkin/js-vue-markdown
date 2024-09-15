@@ -75,8 +75,10 @@ export default {
         allowedIframeHostnames: ['www.youtube.com', 'www.tiktok.com', 'instagram.com', 'facebook.com', 'dailymotion.com', 'hulu.com', 'www.crunchyroll.com', 'www.netflix.com', 'vimeo.com', 'kinescope.io', '9gag.com', 'www.twitch.tv', 'www.veoh.com'],
         allowedAttributes:  Object.assign(sanitizeHtml.defaults.allowedAttributes, {
           'img': ['src', 'alt', 'title'],
-          'a': [ 'href' ],
-          'iframe': [ 'src', 'width', 'height', 'allow', 'allowfullscreen', 'title', 'frameborder' ],
+          'audio': ['src', 'controls', 'autoplay', 'loop', 'muted'],
+          'video': ['src', 'controls', 'controlslist', 'disablepictureinpicture', 'disableremoteplayback', 'width', 'height', 'poster', 'playsinline', 'loop', 'muted'],
+          'a': ['href'],
+          'iframe': ['src', 'width', 'height', 'allow', 'allowfullscreen', 'title', 'frameborder'],
         }),
       }
     }
