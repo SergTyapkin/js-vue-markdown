@@ -1,6 +1,4 @@
 <style lang="stylus" scoped>
-@require '../styles/constants.styl'
-
 </style>
 
 <template>

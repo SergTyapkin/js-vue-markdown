@@ -1,6 +1,4 @@
 <style lang="stylus">
-@require '../../styles/constants.styl'
-
 ._markdown_renderer
   display block
   background colorShadowLight
@@ -9,16 +7,16 @@
   font-family Arial
 
 // Decoration for html tags inside messages
-code-decoration-background = bgColor2
+code-decoration-background = transparent
 code-decoration-border-radius = 2px
-blockquote-decoration-color = bgColor2
+blockquote-decoration-color = transparent
 blockquote-decoration-width = 2px
 blockquote-decoration-margin = 5px 0
 blockquote-decoration-padding = 0 0 0 10px
 blockquote-decoration-offset = 25px
 list-decoration-margin = 5px 0
 list-decoration-offset = 40px
-list-decoration-color = bgColor2
+list-decoration-color = transparent
 p-decoration-margin = 15px 0
 img-decoration-margin = 0
 

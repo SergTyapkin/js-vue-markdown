@@ -1,6 +1,4 @@
 <style lang="stylus" scoped>
-@require '../../styles/buttons.styl'
-
 
 .root-redactor-renderer
   .top-buttons
@@ -8,7 +6,11 @@
     justify-content space-between
     align-items center
     .switch-button
-      button()
+      appearance none
+      background none
+      border 1px solid black
+      outline none
+      padding 8px
       width min-content
       white-space nowrap
 

@@ -2,25 +2,25 @@
 extra-small = 3px
 small-font-size = 14px
 
-svg-buttons-fill-color = textColor1
+svg-buttons-fill-color = transparent
 svg-stroke-width = 1px
 
 // Markdowns
 markdown-panel-shadow-margin = 5px
 markdown-panel-shadow-offset = 3px 3px
 markdown-panel-shadow-blur = 5px
-markdown-panel-shadow-color = colorShadow
+markdown-panel-shadow-color = none
 markdown-panel-margin = 2px
 markdown-panel-border-radius = 3px 0 3px 0
 markdown-panel-font-size = 14px
 markdown-panel-height = 20px
-markdown-panel-bg-color = bgColor
+markdown-panel-bg-color = transparent
 
 markdown-button-width = 30px
 markdown-button-padding = 2px 0 0 0
-markdown-button-divider-color = bgColorLight
+markdown-button-divider-color = transparent
 markdown-button-bg-color = transparent
-markdown-button-bg-color-hover = empColor1_1
+markdown-button-bg-color-hover = transparent
 
 markdown-button-svg-photo-stroke = 2px
 markdown-button-svg-photo-fill = transparent
