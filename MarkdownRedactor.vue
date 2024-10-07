@@ -2,7 +2,7 @@
 extra-small = 3px
 small-font-size = 14px
 
-svg-buttons-fill-color = transparent
+svg-buttons-fill-color = var(--color)
 svg-stroke-width = 1px
 
 // Markdowns
@@ -18,9 +18,9 @@ markdown-panel-bg-color = transparent
 
 markdown-button-width = 30px
 markdown-button-padding = 2px 0 0 0
-markdown-button-divider-color = transparent
+markdown-button-divider-color = #0004
 markdown-button-bg-color = transparent
-markdown-button-bg-color-hover = transparent
+markdown-button-bg-color-hover = #0002
 
 markdown-button-svg-photo-stroke = 2px
 markdown-button-svg-photo-fill = transparent
@@ -30,12 +30,14 @@ markdown-button-svg-photo-fill = transparent
   position relative
   background markdown-bg-color
   textarea
-    textarea()
+    border none
+    outline none
     padding-top markdown-panel-height + markdown-panel-shadow-margin
     width 100%
     resize vertical
 
 .markdown-panel
+  color var(--color)
   position absolute
   top 0
   left 0
