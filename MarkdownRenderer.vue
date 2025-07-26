@@ -53,7 +53,7 @@ img
 
 <script>
 import {marked} from "marked";
-import sanitizeHtml from 'sanitize-html';
+import * as sanitizeHtml from 'sanitize-html';
 
 
 export default {
