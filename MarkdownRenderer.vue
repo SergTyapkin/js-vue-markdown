@@ -53,7 +53,7 @@ img
 
 <script>
 import {marked} from "marked";
-import * as sanitizeHtml from 'sanitize-html';
+import SanitizeHtml from '@sergtyapkin/sanitize-html-es6';
 
 
 export default {
@@ -68,32 +68,35 @@ export default {
     return {
       html: '',
       text: this.$props.initialText,
-      sanitizeOptions: {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['audio', 'video', 'img', 's', 'del', 'b', 'i', 'em', 'strong', 'a', 'iframe', 'code']),
-        allowedIframeHostnames: ['www.youtube.com', 'www.tiktok.com', 'instagram.com', 'facebook.com', 'dailymotion.com', 'hulu.com', 'www.crunchyroll.com', 'www.netflix.com', 'vimeo.com', 'kinescope.io', '9gag.com', 'www.twitch.tv', 'www.veoh.com'],
-        allowedAttributes:  Object.assign(sanitizeHtml.defaults.allowedAttributes, {
-          'img': ['src', 'alt', 'title'],
-          'audio': ['src', 'controls', 'autoplay', 'loop', 'muted'],
-          'video': ['src', 'controls', 'controlslist', 'disablepictureinpicture', 'disableremoteplayback', 'width', 'height', 'poster', 'playsinline', 'loop', 'muted'],
-          'a': ['href'],
-          'iframe': ['src', 'width', 'height', 'allow', 'allowfullscreen', 'title', 'frameborder'],
-        }),
-      }
     }
   },
 
   mounted() {
-    if (this.text)
+    SanitizeHtml.setOptions({
+      allowedTags: SanitizeHtml.AllowedTags.concat([
+        'audio', 'video', 'img', 's', 'del', 'b', 'i', 'em', 'strong', 'a', 'iframe', 'code'
+      ]),
+      AllowedIframeHosts: SanitizeHtml.AllowedIframeHosts,
+      AllowedAttributes:  SanitizeHtml.AllowedAttributes.concat([
+        'src', 'alt', 'title', 'controls', 'autoplay', 'loop', 'muted', 'controlslist',
+        'disablepictureinpicture', 'disableremoteplayback', 'width', 'height', 'poster',
+        'playsinline', 'loop', 'muted', 'href', 'allow', 'allowfullscreen', 'title', 'frameborder'
+      ]),
+    });
+
+    if (this.text) {
       this.update();
+    }
   },
 
   methods: {
     update(text) {
-      if (text)
+      if (text) {
         this.text = text;
+      }
 
       const parsed = marked.parse(this.text, {breaks: true});
-      this.html = sanitizeHtml(parsed, this.sanitizeOptions);
+      this.html = SanitizeHtml.sanitize(parsed);
     }
   }
 };
